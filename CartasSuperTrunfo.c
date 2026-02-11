@@ -16,9 +16,9 @@ int main() {
 
     printf ("Estado:  ");
     scanf  (" %s", &estado);
-    printf("codigo:  ");
+    printf("Codigo:  ");
     scanf (" %s", &cod);
-    printf ("cidade:  ");
+    printf ("Cidade:  ");
     scanf (" %s", &cidade);
     printf ("Populacao: ");
     scanf (" %d", &pop);
@@ -29,15 +29,15 @@ int main() {
     printf ("PIB: ");
     scanf("%f", &pib);
   
-printf ("== Cadastre sua segunda Carta ==\n\n");
+printf ("\n\n== Cadastre sua segunda Carta ==\n\n");
 
     //carta 2
 
     printf ("Estado:  ");
     scanf  (" %s", &estado2);
-    printf("codigo:  ");
+    printf("Codigo:  ");
     scanf (" %s", &cod2);
-    printf ("cidade:  ");
+    printf ("Cidade:  ");
     scanf (" %s", &cidade2);
     printf ("Populacao: ");
     scanf (" %d", &pop2);
@@ -59,7 +59,7 @@ printf ("== Cadastre sua segunda Carta ==\n\n");
     printf ("Seu codigo é: %s \n", cod );
     printf ("Sua cidade é: %s \n", cidade);
     printf ("O Numero de população é: %d \n", pop);
-    printf ("A cidade tem: %d de pontos turisticos \n", pt );
+    printf ("A cidade tem %d de pontos turisticos \n", pt );
     printf ("Sua cidade tem %f quadrados \n", area);
     printf ( "O PIB da sua cidade é de: %f \n\n", pib);
 
@@ -72,7 +72,7 @@ printf ("== Cadastre sua segunda Carta ==\n\n");
     printf ("Seu codigo é: %s \n", cod2 );
     printf ("Sua cidade é: %s \n", cidade2);
     printf ("O Numero de população é: %d \n", pop2);
-    printf ("A cidade tem: %d de pontos turisticos \n", pt2 );
+    printf ("A cidade tem %d de pontos turisticos \n", pt2 );
     printf ("Sua cidade tem %f metros quadrados \n", area2);
     printf ( "O PIB da sua cidade é de: %f \n\n", pib2);
 
