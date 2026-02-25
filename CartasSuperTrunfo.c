@@ -24,8 +24,7 @@ int main (){
     printf ("PIB: ");
     scanf("%f", &pib);
 
-    //Operador pra densidade e renda per capta 
-  
+    //Operador pra densidade e PIB per capta  
     denspop1 = pop / area;
     pibpc1 = (pib * 1000000)/ pop;
 
@@ -67,7 +66,7 @@ int main (){
     printf ("PIB: ");
     scanf("%f", &pib2);
 
-    //operador apra densidade e pib per capta
+    //operador apra densidade e PIB per capta
 
     denspop2 = pop2 / area2;
     pibpc2 = (pib2 *1000000) / pop2;
