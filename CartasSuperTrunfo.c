@@ -110,7 +110,17 @@ int main (){
     printf ("\n\n == Resultado da Batalha == \n\n");
     printf ("\n\n Gabarito : Carta 1 venceu = carta 1\n Carta 0 venceu: Carta 2 venceu \n\n");
 
-    printf ("População: Carta %d venceu\n", pop > pop2);
+    //aplicando o uso de if e else
+
+    printf ("Carta 1 tem %d de habitantes\n", pop);
+    printf ("Carta 2 tem %d de habitantes\n", pop2);
+    if (pop > pop2){
+        printf ("Carta 1 venceu!!\n", pop);
+    }else {
+        printf ("Carta 2 Ganhou !!\n\n");
+    }
+
+    
     printf ("Área: carta %d venceu\n", area > area2);
     printf ("PIB: carta %d venceu\n", pib > pib2);
     printf ("Pontos Turisticos: Carta %d venceu\n", pt > pt2);
