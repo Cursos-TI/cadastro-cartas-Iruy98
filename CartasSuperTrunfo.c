@@ -1,11 +1,15 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main (){
     
+    srand (time(0));
+    int maquina;
     char estado[50], estado2[50], cod[50], cod2[50], cidade[50], cidade2[50];
-    int pt, pt2;
+    int pt, pt2, vit1, vit2;
     unsigned long int pop, pop2;
     float area, area2, pib, pib2, denspop1, denspop2, pibpc1, pibpc2, superpoder1, superpoder2, invdens1, invdens2;
 
@@ -32,31 +36,14 @@ int main (){
     scanf("%f", &pib);
     getchar (); //limpar dados do buffer (Enter)
 
-    //Operador pra densidade e PIB per capta  
+    //Operador pra densidade e PIB per capta da carta 1
 
     denspop1 = pop / area;
     pibpc1 = (pib * 1000000)/ pop;
     invdens1 = 1 / denspop1;
     superpoder1 = (float) pop + area + pib + (float)pt + pibpc1 + invdens1;
 
-
-    // imprimir resultados da primeira carta 
-
-    printf ("\n\n == Sua Carta tem == \n\n");
-
-
-    printf ("Seu Estado é: %s \n", estado);
-    printf ("Seu codigo é: %s \n", cod );
-    printf ("Sua cidade é: %s \n", cidade);
-    printf ("O Numero de população é: %lu \n", pop);
-    printf ("A cidade tem %d de pontos turisticos \n", pt );
-    printf ("Sua cidade tem %.2f km² \n", area);
-    printf ("O PIB da sua cidade é de R$ %.2f \n", pib);
-    printf ("A densidade populacional é de %.2f hab/km²\n", denspop1);
-    printf ("O PIB Percapta é de R$ %.2f \n\n", pibpc1);
-     
-    
-        //dados para segunda carta
+    //dados para segunda carta
     
 
     printf ("\n== Cadastre sua segunda Carta ==\n\n");
@@ -81,14 +68,27 @@ int main (){
     printf ("PIB: ");
     scanf("%f", &pib2);
 
-    //operador apra densidade e PIB per capta
+    //operador apra densidade e PIB per capta da carta 2
 
     denspop2 = pop2 / area2;
     pibpc2 = (pib2 *1000000) / pop2;
     invdens2 = 1 / denspop2;
     superpoder2 = (float) pop2 + area2 + pib2 + (float)pt2 + pibpc2 + invdens2;
 
+    // imprimir resultados da primeira carta 
 
+    printf ("\n\n == Sua Carta tem == \n\n");
+
+
+    printf ("Seu Estado é: %s \n", estado);
+    printf ("Seu codigo é: %s \n", cod );
+    printf ("Sua cidade é: %s \n", cidade);
+    printf ("O Numero de população é: %lu \n", pop);
+    printf ("A cidade tem %d de pontos turisticos \n", pt );
+    printf ("Sua cidade tem %.2f km² \n", area);
+    printf ("O PIB da sua cidade é de R$ %.2f \n", pib);
+    printf ("A densidade populacional é de %.2f hab/km²\n", denspop1);
+    printf ("O PIB Percapta é de R$ %.2f \n\n", pibpc1);
 
     // imprimir resultados da segunda carta 
 
@@ -104,30 +104,46 @@ int main (){
     printf ("O PIB da sua cidade é R$ %.2f \n", pib2);
     printf ("A densidade populacional é de %.2f hab/km² \n", denspop2);
     printf ("O PIB Percapta é de R$ %.2f \n\n", pibpc2);
+
+    maquina = rand () % 2 + 1;
     
-    //Resultados da Batalha 
-
-    printf ("\n\n == Resultado da Batalha == \n\n");
-    printf ("\n\n Gabarito : Carta 1 venceu = carta 1\n Carta 0 venceu: Carta 2 venceu \n\n");
-
-    //aplicando o uso de if e else
-
-    printf ("Carta 1 tem %d de habitantes\n", pop);
-    printf ("Carta 2 tem %d de habitantes\n", pop2);
-    if (pop > pop2){
-        printf ("Carta 1 venceu!!\n", pop);
-    }else {
-        printf ("Carta 2 Ganhou !!\n\n");
-    }
-
+    //Hora da batalha
     
-    printf ("Área: carta %d venceu\n", area > area2);
-    printf ("PIB: carta %d venceu\n", pib > pib2);
-    printf ("Pontos Turisticos: Carta %d venceu\n", pt > pt2);
-    printf ("Densidade Populacional: carta %d venceu\n", denspop1 < denspop2);
-    printf ("PIB per capita: Carta %d venceu\n", pibpc1 > pibpc2);
-    printf ("Super Poder: Carta %d venceu\n", superpoder1 > superpoder2);
-    
+   printf ("++ Hora do combate ++\n\n");
+
+   switch (maquina)
+   {
+   case 1:
+   
+   printf ("A maquina escolheu a carta %s para batalhar\n", estado );
+   printf ("O super poder da carta %s é de %.2f de poder\n", estado, superpoder1);
+
+    break;
+   
+   case 2:
+   printf ("A maquina escolher a carta %s para batalhar\n", estado2 );
+   printf ("O super poder da carta %s é de %.2f de poder\n", estado2, superpoder2);
+
+
+    break;
+
+    default:
+
+    printf ("Opção invalida\n");
+   }
+
+   if (superpoder1 > superpoder2) {
+    printf ("A carta 1 - %s venceu\n", estado);
+   }
+   else {
+    printf ("A carta 2 - %s venceu\n", estado2);
+   }
+
+
+   
+   
+
+
 
     return 0;
 }
